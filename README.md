@@ -85,16 +85,16 @@ make -j$(nproc) && sudo make install
 
 This project involves a low cost 3D reconstruction process that presents a variation of generic pipelines methodology suggested by previous works, aiming to improve the final quality of the model and the automation of the process.
 
-We developed hybrid methodology composed of: capturing images of depth and color; generation of point clouds from Kinect depth images; capture alignment and estimation of camera positions for high definition images; mesh generation; texturing with high quality photos resulting in the final 3D model of the object of interest.
+A hybrid methodology have been developed, which is composed of: capturing images of depth and color; generation of point clouds from Kinect depth images; capture alignment and estimation of camera positions for high definition images; mesh generation; texturing with high quality photos resulting in the final 3D model of the object of interest.
 
-The methodology described here was divided into four files developed in bash script, responsible for making calls to various image and point clouds manipulation programs, in order to generate a good 3D model. The execution files needed to achieve our goals are described here:
+The methodology described here is divided into four bash script files, responsible for making calls to various image and point clouds manipulation programs in order to generate a good 3D model. **The execution files needed to achieve our goals are described here:** ~Não entendi isso aqui.~
 
 1. [capture.sh](https://github.com/Eberty/msc-research/blob/master/scripts/capture.sh)
-    * To obtain depth images, the Kinect sensor (version 1 or 2) can be used. Depth images should be recorded so that the next one gradually increases the previous one, until a complete cycle is performed on the object of interest. Top and bottom view images can be captured independently.
-    * The meshes produced by kinect version one and two will be the same names. They will differ only by the accuracy (type) of channels in the generated depth images.
-    * **Copy this script into one workspace folder and execute: `source capture.sh <object_name> <kinect_version=1|2>`**
-    * The name of the object of interest is the first argument of this script, the second argument indicates the version of kinect used to make depth captures.
-    * When the program is running, it is important to remember: The numbers **2** and **8** configures the captures for the bottom and top views respectively. The other numbers when pressed sets the normal capture method. Run `/usr/local/msc-research/depth_capture -h` to more information.
+    * To obtain depth images, the Kinect sensor (version 1 or 2) can be used. Depth images should be recorded so that the next one gradually increases the previous one until a complete cycle is performed on the object of interest. Top and bottom view images can be captured independently.
+    * The meshes produced by kinect version one or two will have the same names. They will differ only by the accuracy (type) of channels in the generated depth images.
+    * **Copy this script into a workspace folder and execute: `source capture.sh <object_name> <kinect_version=1|2>`**
+    * The name of the object of interest is the first argument of this script, the second one indicates the kinect version used to make depth captures.
+    * When the program is running, it is important to remember: The numbers **2** and **8** configures the captures from the bottom and top views respectively. The other numbers when selected sets the normal capture method. Run `/usr/local/msc-research/depth_capture -h` to have more information.
 
     <br />
 
